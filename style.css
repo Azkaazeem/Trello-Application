@@ -11,7 +11,7 @@ body {
 #search-bar {
     background-color: #6655A5;
     border: #bdbace2b 1px solid;
-    min-width: 250px; /* Desktop par search bar lamba rahega */
+    min-width: 250px;
 }
 
 #search-bar input:focus {
@@ -43,7 +43,6 @@ body {
     background: linear-gradient(to right, #8d44adc2, #2962ffa4);
 }
 
-/* Mobile Screens ke liye Search bar ko 100% width dena */
 @media (max-width: 991px) {
     #search-bar {
         width: 100%;
@@ -71,15 +70,14 @@ body {
 
 .board {
     display: flex;
-    flex-wrap: wrap; /* Changed to nowrap for Trello-like horizontal scrolling */
-    overflow-x: auto;  /* Allows horizontal scrolling */
-    align-items: flex-start; /* Prevents lists from stretching vertically */
+    flex-wrap: wrap;
+    overflow-x: auto;
+    align-items: flex-start;
     gap: 15px;
     margin: 20px;
-    padding-bottom: 20px; /* Space for the scrollbar */
+    padding-bottom: 20px;
 }
 
-/* Customizing the scrollbar for the board */
 .board::-webkit-scrollbar {
     height: 10px;
 }
@@ -94,12 +92,12 @@ body {
     padding: 15px;
     width: 280px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    flex-shrink: 0; /* Prevents list from shrinking */
+    flex-shrink: 0;
     min-height: 130px;
     display: flex;
     flex-direction: column;
-    animation: fadeIn 0.4s ease-out; /* Creation Animation */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Deletion Animation */
+    animation: fadeIn 0.4s ease-out;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .list.fade-out {
@@ -150,7 +148,7 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
-    animation: slideIn 0.3s ease-out; /* Card Creation Animation */
+    animation: slideIn 0.3s ease-out;
     transition: all 0.3s ease;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     cursor: grab;
@@ -181,7 +179,6 @@ body {
     padding: 2px 6px;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -192,10 +189,8 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .list, .add-list {
-        /* Makes lists take up most of the screen, leaving a peek of the next one */
         width: 85vw; 
     }
 }
