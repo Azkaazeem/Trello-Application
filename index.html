@@ -19,38 +19,63 @@
 
 <body>
     <nav>
-        <div id="nav1">
-            <div id="nav1-side1">
-                <span id="dashboard"><img src="images/01.png" alt="" class="hover"></span>
-                <span id="logo" class="hover"><img src="images/02.png" alt=""> Trello</span>
-            </div>
+        <nav class="navbar navbar-expand-lg" style="background-color: #473699; border-bottom: 0.1px rgba(218, 187, 255, 0.532) solid;">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center">
+                    <span id="dashboard" class="me-2"><img src="images/01.png" alt="" class="hover" style="width: 30px; padding: 5px; border-radius: 4px;"></span>
+                    <a class="navbar-brand text-white d-flex align-items-center fw-bold m-0 hover px-2 rounded" href="#" id="logo" style="font-size: 20px;">
+                        <img src="images/02.png" alt="" style="width: 24px; margin-right: 8px;"> Trello
+                    </a>
+                </div>
 
-            <div id="nav1-side2">
-                <div id="search-bar" class="hover"><i class="fa-solid fa-magnifying-glass"
-                        style="color: #ffffff;"></i><input type="text" placeholder="Search"></div>
-                <button id="create-btn" class="hover">Create</button>
-            </div>
+                <button class="navbar-toggler shadow-none border-0 px-2" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar" aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" style="color: white; font-size: 24px;"></i>
+                </button>
 
-            <div id="nav1-side3">
-                <button id="pro-btn"><img src="images/03.png" alt=""> 2 days left</button>
-                <div><i class="fa-solid fa-bullhorn" style="color: #ffffff;"></i></div>
-                <div><i class="fa-regular fa-bell" style="color: #ffffff;"></i></div>
-                <div><i class="fa-regular fa-circle-question" style="color: #ffffff;"></i></div>
-                <div id="user">AA</div>
+                <div class="collapse navbar-collapse" id="topNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center ms-lg-3 mt-3 mt-lg-0 gap-2">
+                        <li class="nav-item">
+                            <div id="search-bar" class="hover d-flex align-items-center px-2 py-1 rounded">
+                                <i class="fa-solid fa-magnifying-glass text-white me-2"></i>
+                                <input type="text" placeholder="Search" class="bg-transparent border-0 text-white shadow-none w-100">
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <button id="create-btn" class="hover border-0 text-white fw-bold px-3 py-1 rounded w-100 text-lg-center text-start">Create</button>
+                        </li>
+                    </ul>
+                    
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-2 mt-3 mt-lg-0 pb-2 pb-lg-0">
+                        <li class="nav-item mb-2 mb-lg-0">
+                            <button id="pro-btn" class="border-0 text-white px-3 py-1 rounded d-flex align-items-center justify-content-center w-100">
+                                <img src="images/03.png" alt="" style="width: 18px; margin-right: 6px;"> 2 days left
+                            </button>
+                        </li>
+                        <li class="nav-item d-flex align-items-center gap-2 text-white hover p-2 rounded cursor-pointer" style="cursor: pointer;">
+                            <i class="fa-solid fa-bullhorn"></i> <span class="d-lg-none">Announcements</span>
+                        </li>
+                        <li class="nav-item d-flex align-items-center gap-2 text-white hover p-2 rounded cursor-pointer" style="cursor: pointer;">
+                            <i class="fa-regular fa-bell"></i> <span class="d-lg-none">Notifications</span>
+                        </li>
+                        <li class="nav-item d-flex align-items-center gap-2 text-white hover p-2 rounded cursor-pointer" style="cursor: pointer;">
+                            <i class="fa-regular fa-circle-question"></i> <span class="d-lg-none">Help</span>
+                        </li>
+                        <li class="nav-item mt-2 mt-lg-0 d-flex justify-content-start justify-content-lg-center">
+                            <div id="user" class="text-white text-center rounded-circle" style="background-color: #6655a583; padding: 6px 8px; font-weight: bold; width: fit-content; min-width: 35px;">AA</div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
 
         <div id="nav2">
             <nav class="navbar navbar-expand-lg trello-header">
                 <div class="container-fluid">
-                    <!-- Left Side -->
                     <div class="d-flex align-items-center">
                         <h5 class="mb-0 fw-bold text-white me-2">My Trello board</h5>
                         <button class="btn btn-sm dropdown-toggle text-white border-0" type="button"></button>
                     </div>
-
-                    <!-- Right Side Icons -->
-                    <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center gap-3 mt-2 mt-lg-0 flex-wrap">
                         <div class="icon-circle text-white">AA</div>
                         <i class="fas fa-rocket text-white"></i>
                         <i class="fas fa-bolt text-white"></i>
@@ -68,26 +93,32 @@
 
 
     <div class="board" id="board">
-    <div class="list">
-      <div class="list-title">Today</div>
-      <div class="card-input" draggable="true">
-        <input type="text" value="Start using Trello" readonly>
-      </div>
-      <button class="btn btn-link text-dark p-0">+ Add a card</button>
+        <div class="list">
+            <div class="list-header d-flex justify-content-between align-items-center mb-2">
+                <div class="list-title mb-0">Today</div>
+                <button class="btn btn-sm text-danger delete-list-btn"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="card-input" draggable="true">
+                <input type="text" value="Start using Trello" readonly>
+            </div>
+            <button class="btn btn-link text-dark p-0 mt-2 add-card-btn">+ Add a card</button>
+        </div>
+
+        <div class="list" style="background: #b9f3e4;">
+            <div class="list-header d-flex justify-content-between align-items-center mb-2">
+                <div class="list-title mb-0">This Week</div>
+                <button class="btn btn-sm text-danger delete-list-btn"><i class="fas fa-trash"></i></button>
+            </div>
+            <div class="card-input" draggable="true">
+                <input type="text" value="Example Task" readonly>
+            </div>
+            <button class="btn btn-link text-dark p-0 mt-2 add-card-btn">+ Add a card</button>
+        </div>
+
+        <div class="add-list" id="addListBtn">+ Add another list</div>
     </div>
 
-    <div class="list">
-      <div class="list-title">This Week</div>
-      <div class="card-input" draggable="true">
-        <input type="text" value="Example Task" readonly>
-      </div>
-      <button class="btn btn-link text-dark p-0">+ Add a card</button>
-    </div>
-
-    <div class="add-list" id="addListBtn">+ Add another list</div>
-  </div>
-
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 
